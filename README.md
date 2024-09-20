@@ -21,14 +21,14 @@ Now, observe the second column of w_{1} and second row of w_{1}. If 1 appears in
 <br>
 Step 5: Repeat the procedure till you get W_{n} in which no change is possible. Note that to fill up the matrix W_{k}, we consider the kth column and kth row of the matrix W_{k-1}.
 <br>
-The procedure will be clearer after you read the solution of the following example
-NOTE :- The matrix  whose elements are either 1 or 0 is called a Boolean Matrix
-let A ={1,2,3,4} and  R = {(1,1),(1,2),(1,4),(2,4),(3,1),(3,2),(4,2),(4,3),(4,4)}
-Find transitive closure of R by using Warshall's Algorithm.
-Step 1
-Wo =  
- 1 1 0 1
- 0 0 0 1
+The procedure will be clearer after you read the solution of the following example<br>
+NOTE :- The matrix  whose elements are either 1 or 0 is called a Boolean Matrix<br>
+let A ={1,2,3,4} and  R = {(1,1),(1,2),(1,4),(2,4),(3,1),(3,2),(4,2),(4,3),(4,4)}<br>
+Find transitive closure of R by using Warshall's Algorithm.<br>
+Step 1<br>
+Wo =  <br>
+ 1 1 0 1 <br>
+ 0 0 0 1 <br>
  1 1 0 0
  0 1 1 1
 Step 2

@@ -54,7 +54,7 @@ Step 4 <br>
 Column 3-->Pi = 4,
 <br> Row 3-->Qi = 1, 2, 4, <br>
 So,we put one in (4,1)(4,2)(4,4) positions,if there is no one already <br>
-<br>W 3 = <br>
+W 3 = <br>
  1 1 0 1 <br>
  0 0 0 1 <br>
  1 1 0 1 <br>
@@ -63,7 +63,7 @@ Step 5 <br>
 Column 4-->Pi = 1, 2, 3, 4,<br>
 Row 4-->Qi = 1, 2, 3, 4,<br>
 <br>So,we put one in (1,1)(1,2)(1,3)(1,4)(2,1)(2,2)(2,3)(2,4)(3,1)(3,2)(3,3)(3,4)(4,1)(4,2)(4,3)(4,4) positions,if there is no one already
-W 4 = <br>
+<br>W 4 = <br>
  1 1 1 1 <br>
  1 1 1 1 <br>
  1 1 1 1 <br>

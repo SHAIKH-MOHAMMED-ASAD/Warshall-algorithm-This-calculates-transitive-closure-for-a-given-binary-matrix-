@@ -1,1 +1,138 @@
-
+//Warshall alogrithm
+//This calculates transitive closure for a given binary matrix
+//Author : SHAIKH MOHAMMED ASAD
+import java.util.Scanner;
+public class warshallsalogrithm {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter number of elements in set A : ");
+        int rows = sc.nextInt();
+        int[][] arr = new int[rows][rows];
+        int[] arr_ri = new int[rows];
+        int[] arr_ci = new int[rows];
+        System.out.println("NOTE :- The matrix  whose elements are either 1 or 0 is called a Boolean Matrix ");
+        System.out.println("Enter a Relation pairs in a matrix form :");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < rows; j++) {
+                arr[i][j] = sc.nextInt();
+            }
+        }
+        System.out.println("Step "+1);
+        System.out.println("Wo = ");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < rows; j++) {
+                System.out.print(" "+arr[i][j]);
+            }
+            System.out.println();
+        }
+        for(int p = 0 ; p < rows ; p++){
+            int h = -1;
+        System.out.println("Step "+(2+p));
+        System.out.print("Column "+(1+p)+"-->Pi =");
+           for (int i = 0,k=0; i < rows; i++,k++) {
+            if (arr[i][p]==1){ arr_ci[k]=1;h++;
+                System.out.print(" "+(k+1)+",");   
+                }
+            else arr_ci[k]=0;
+            }
+            if(h==-1) {
+                System.out.println("nil \nSo,there is no addition");
+             System.out.println("W "+(1+p)+" = ");
+            for (int i = 0; i < rows; i++) {
+                for (int j = 0; j < rows; j++) {
+                    System.out.print(" "+arr[i][j]);
+                }
+                System.out.println();
+            }
+             break;
+            }
+            h=-1;
+            System.out.print("\nRow "+(1+p)+"-->Pi =");
+            for (int j = 0,k=0; j < rows; j++,k++) {
+                if (arr[p][j]==1){ arr_ri[k]=1;h++;
+                    System.out.print(" "+(k+1)+",");    
+                }
+                else arr_ri[k] = 0;
+              }
+              if(h==-1) {
+                System.out.println("nil \nSo,there is no addition");
+             System.out.println("W "+(1+p)+" = ");
+            for (int i = 0; i < rows; i++) {
+                for (int j = 0; j < rows; j++) {
+                    System.out.print(" "+arr[i][j]);
+                }
+                System.out.println();
+            }
+             break;
+            }
+              System.out.print("\nSo,we put one in ");
+            for(int i = 0 ; i<rows ; i++){
+                for(int j = 0 ; j<rows ; j ++){
+                  if(arr_ci[i]==1 && arr_ri[j]==1) {arr[i][j]=1;
+                    System.out.print("("+(i+1)+","+(j+1)+")"); 
+                    }
+                }
+            }
+            System.out.println(" positions,if there is no one already");
+            System.out.println("W "+(1+p)+" = ");
+            for (int i = 0; i < rows; i++) {
+                for (int j = 0; j < rows; j++) {
+                    System.out.print(" "+arr[i][j]);
+                }
+                System.out.println();
+            }
+        } 
+        sc.close();
+    }
+}
+/*OUTPUT SAMPLE
+Enter number of elements in set A : 4       
+NOTE :- The matrix  whose elements are either 1 or 0 is called a Boolean Matrix
+Enter a Relation pairs in a matrix form :   
+0 1 0 0
+1 0 1 0
+0 0 0 1
+0 0 0 0
+Step 1
+Wo =
+ 0 1 0 0
+ 1 0 1 0
+ 0 0 0 1
+ 0 0 0 0
+Step 2
+Column 1-->Pi = 2,
+Row 1-->Pi = 2,   
+So,we put one in (2,2) positions,if there is no one already
+W 1 =
+ 0 1 0 0
+ 1 1 1 0
+ 0 0 0 1
+ 0 0 0 0
+Step 3
+Column 2-->Pi = 1, 2,
+Row 2-->Pi = 1, 2, 3,
+So,we put one in (1,1)(1,2)(1,3)(2,1)(2,2)(2,3) positions,if there is no one already    
+W 2 =
+ 1 1 1 0
+ 1 1 1 0
+ 0 0 0 1
+ 0 0 0 0
+Step 4
+Column 3-->Pi = 1, 2,
+Row 3-->Pi = 4,
+So,we put one in (1,4)(2,4) positions,if there is no one already
+W 3 =
+ 1 1 1 1
+ 1 1 1 1
+ 0 0 0 1
+ 0 0 0 0
+Step 5
+Column 4-->Pi = 1, 2, 3,
+Row 4-->Pi =nil
+So,there is no addition
+W 4 =
+ 1 1 1 1
+ 1 1 1 1
+ 0 0 0 1
+ 0 0 0 0
+*/

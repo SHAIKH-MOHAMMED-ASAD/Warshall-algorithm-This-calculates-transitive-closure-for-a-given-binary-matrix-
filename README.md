@@ -1,5 +1,3 @@
-# Suggested reading in raw code 
-<br>
 <h1>Warshall's Algorithm</h1>
 <br>
 Let the given set A have a elements and R be a relation defined on A. Let M_{R} be n*n martrix
